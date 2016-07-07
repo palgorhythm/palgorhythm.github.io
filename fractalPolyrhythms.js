@@ -55,13 +55,14 @@ var timbrePoly = function()
 	}
 
 	//var array = new Array(2);
-	var sin0 = T("OscGen", {wave:"tri", mul:volumes[0]});
-	var sin1 = T("OscGen", {wave:"tri", mul:volumes[1]});
-	var sin2 = T("OscGen", {wave:"tri", mul:volumes[2]});
-	var sin3 = T("OscGen", {wave:"tri", mul:volumes[3]});
-	var sin4 = T("OscGen", {wave:"tri", mul:volumes[4]});
-	var sin5 = T("OscGen", {wave:"tri", mul:volumes[5]});
-	var sin6 = T("OscGen", {wave:"tri", mul:volumes[6]});
+	var env = T("perc", {a:50, r:2500});
+	var sin0 = T("PluckGen", {env:env, mul:volumes[0]});
+	var sin1 = T("PluckGen", {env:env, mul:volumes[1]});
+	var sin2 = T("PluckGen", {env:env, mul:volumes[2]});
+	var sin3 = T("PluckGen", {env:env, mul:volumes[3]});
+	var sin4 = T("PluckGen", {env:env, mul:volumes[4]});
+	var sin5 = T("PluckGen", {env:env, mul:volumes[5]});
+	var sin6 = T("PluckGen", {env:env, mul:volumes[6]});
 
 	var inter0 = T("interval", {interval:intervals[0]}, function() {
 	    sin0.noteOnWithFreq(freqs[0], 80);
