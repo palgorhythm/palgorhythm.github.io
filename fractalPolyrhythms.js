@@ -120,7 +120,7 @@ var spare = timbrePoly;
 function reset()
 {
 	window.close();
-	setTimeout(window.open("https://whrthsdwlknds.github.io/fractalPolyrhythms.html"),1000);
+	setTimeout(window.open("https://whrthsdwlknds.github.io/fractalPolyrhythms.html"),3000);
 }
 
 
