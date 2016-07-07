@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stacked Polyrhythms!</title>
+  </head>
+  
+  <body>
+      <form id = "form" action="" method="post">
+        <fieldset>
+          <input type="text" name="A" id="A" />
+          <label for="A">A</label>
+        </fieldset>
+        <fieldset>
+          <input type="text" name="B" id="B" />
+          <label for="B">B</label>
+        </fieldset>
+        <fieldset>
+        <input type="text" name="levels" id="levels" />
+          <label for="levels"># of levels</label>
+        </fieldset>
+        <fieldset>
+          <input type="text" name="bpm" id="bpm" />
+          <label for="bpm">BPM</label>
+        </fieldset>
+      </form>
+
+      <button id= "start" onclick="timbrePoly()" type="button">go</button>
+      <button id = "stop" style="visibility: hidden" onclick="reset()" type="button">stop</button>
+      <p>This page implements up to 7 layers of any fractal polyrhythm you like! </p>
+    </br>
+    </br>
+    <div id='description'></div>
+
+		<script src="/Users/jacobrichards/Desktop/Web Projects/whrthsdwlknds.github.io/timbre.js"></script>
+		<script src="/Users/jacobrichards/Desktop/Web Projects/whrthsdwlknds.github.io/timbrePolyAttempt2.js">
+		</script>
+  </body>
+</html>
