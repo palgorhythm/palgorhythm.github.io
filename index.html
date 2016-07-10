@@ -8,28 +8,33 @@
   <body>
     <form id = "form" action="" method="post">
       <fieldset>
-        <input type="text" value = "2" name="A" id="A" />
+        <input type="number" value="2" name="A" id="A" />
         <label for="A">A</label>
       </fieldset>
+
       <fieldset>
-        <input type="text" value = "3" name="B" id="B" />
+        <input type="number" value="3" name="B" id="B" />
         <label for="B">B</label>
       </fieldset>
+
       <fieldset>
-      <input type="text" value = "2" name="levels" id="levels" />
+        <input type="number" value="2" name="levels" id="levels" />
         <label for="levels"># of levels</label>
       </fieldset>
+
       <fieldset>
-        <input type="text" value = "100" name="bpm" id="bpm" />
+        <input type="number" value="100" name="bpm" id="bpm" />
         <label for="bpm">BPM</label>
       </fieldset>
+
+      <button id="start" type="submit">go</button>
+      <button id="stop" type="button">stop</button>
     </form>
 
-    <button id= "start" type="button">go</button>
-    <button id = "stop" style="visibility: hidden" type="button">stop</button>
     <p>This page implements up to 7 layers of any fractal polyrhythm you like! The generating polyrhythm is A:B. It sounds nicer when A is less than B.</p>
     </br>
     </br>
+
     <div id="description"></div>
 
     <script src="./bundle.js"></script>
