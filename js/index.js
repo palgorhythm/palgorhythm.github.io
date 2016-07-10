@@ -1,24 +1,13 @@
-// var inter0 = null;
-// var inter1 = null;
-// var inter2 = null;
-// var inter3 = null;
-// var inter4 = null;
-// var inter5 = null;
-// var inter6 = null;
+var $ = require('jquery')
+var T = require('timbre')
 
-
-var timbrePoly = function()
-{
+var timbrePoly = function () {
 	document.getElementById("start").style.visibility = 'hidden';
 	document.getElementById("stop").style.visibility = 'visible';
 
-	console.log(document.getElementById("form").elements);
 	ratio = [parseInt(document.getElementById("form").elements[1].value),parseInt(document.getElementById("form").elements[3].value)]; //input
 	levels = parseInt(document.getElementById("form").elements[5].value); //input: up to 6
 	BPM = parseInt(document.getElementById("form").elements[7].value); //input
-	console.log(ratio);
-	console.log(levels);
-	console.log(BPM);
 
 	//var myWindow = window.open("", "MsgWindow", "width=400, height=100");
 	document.getElementById('description').innerHTML = levels+" levels of "+ratio[0]+":"+ratio[1]+" polyrhythm  at "+BPM+ " BPM";
@@ -54,7 +43,6 @@ var timbrePoly = function()
 
 	}
 
-	//var array = new Array(2);
 	var env = T("perc", {a:50, r:2500});
 	var sin0 = T("PluckGen", {env:env, mul:volumes[0]});
 	var sin1 = T("PluckGen", {env:env, mul:volumes[1]});
@@ -71,7 +59,6 @@ var timbrePoly = function()
 	var inter1 = T("interval", {interval:intervals[1]}, function() {
 	    sin1.noteOnWithFreq(freqs[1], 80);
 	}).set({buddies:sin1});
-	
 
 	var inter2 = T("interval", {interval:intervals[2]}, function() {
 	    sin2.noteOnWithFreq(freqs[2], 80);
@@ -92,38 +79,24 @@ var timbrePoly = function()
 	var inter6 = T("interval", {interval:intervals[6]}, function() {
 	    sin6.noteOnWithFreq(freqs[6], 80);
 	}).set({buddies:sin6});
-	
-	// if(on)
-	// {
-		inter0.start();
-		inter1.start();
-		inter2.start();
-		inter3.start();
-		inter4.start();
-		inter5.start();
-		inter6.start();
-	// }
-	// else
-	// {
-	// 	console.log("yeah");
-	// 	inter0.stop();
-	// 	inter1.stop();
-	// 	inter2.stop();
-	// 	inter3.stop();
-	// 	inter4.stop();
-	// 	inter5.stop();
-	// 	inter6.stop();
-	// }
+
+	inter0.start();
+	inter1.start();
+	inter2.start();
+	inter3.start();
+	inter4.start();
+	inter5.start();
+	inter6.start();
 }
 
-var spare = timbrePoly;
-
-function reset()
-{
+function reset() {
 	location.reload();
 }
 
+$('#start').click(function (e) {
+  timbrePoly()
+})
 
-
-
-
+$('#stop').click(function (e) {
+  reset()
+})
