@@ -97,6 +97,8 @@ $('#start').click(function (e) {
   timbrePoly()
 })
 
+$('#start').trigger('click')
+
 $('#stop').click(function (e) {
   reset()
 })
