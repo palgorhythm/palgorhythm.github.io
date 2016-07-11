@@ -6,7 +6,6 @@ $('#overlay').fadeOut({
   duration: 3000,
   easing: 'swing'
 })
-resizeInput($('.form-field'))
 
 $('#start').click(timbrePoly)
 $('#stop').click(function () {
@@ -22,13 +21,3 @@ $('#form').submit(function (e) {
 })
 
 $('#form').trigger('submit')
-
-$('.form-field').on('keypress keyup keydown change', function () {
-  resizeInput($(this))
-})
-
-function resizeInput ($input) {
-  $input.css({
-    width: ($input.val().length + 1) * parseInt($input.css('font-size'), 10) + 'px'
-  })
-}
