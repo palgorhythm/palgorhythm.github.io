@@ -2,6 +2,8 @@
 
 fractal-polyrhythms
 
+node/browserify-ified fork of @whrthsdwlknds code
+
 ## install
 
 ```
