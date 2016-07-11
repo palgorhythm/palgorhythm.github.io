@@ -4,6 +4,7 @@ html, body {
 }
 
 body {
+  display: none;
   font-family: sans-serif;
   font-weight: lighter;
   font-size: 14px;
@@ -73,9 +74,10 @@ body {
   text-align: center;
 }
 
-#overlay {
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background: white;
+.dot {
+  display: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }

@@ -2,10 +2,7 @@ var $ = require('jquery')
 var formToObject = require('form-to-object')
 var timbrePoly = require('./timbre-poly.js')
 
-$('#overlay').fadeOut({
-  duration: 3000,
-  easing: 'swing'
-})
+$('body').fadeIn({ duration: 3000, easing: 'swing' })
 
 $('#start').click(timbrePoly)
 $('#stop').click(function () {
