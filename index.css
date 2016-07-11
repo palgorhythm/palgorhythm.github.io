@@ -3,6 +3,62 @@ html, body {
   height: 100%;
 }
 
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+#form {
+  border: 3px solid black;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+}
+
+.vertalign {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+}
+
+#form-fields-container {
+  width: 175px;
+  margin: 0 auto;
+}
+
+.form-field {
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 0;
+  font-size: inherit;
+}
+
 #stop {
-  display: "none";
+  display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#description {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  text-align: center;
+}
+
+#overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: white;
 }

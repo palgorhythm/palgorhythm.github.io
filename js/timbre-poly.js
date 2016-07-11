@@ -13,12 +13,7 @@ function timbrePoly (opts) {
 
 	for(var i = 0; i <= levels; i++) {
     var currentRhythm = Math.pow(ratio[0],levels-i)*Math.pow(ratio[1],i)
-    generateInterval({
-      env: env,
-      interval: baseInterval * currentRhythm,
-      volume: 0.2,
-      freq: freqs[i]
-    })
+    generateInterval({ id: i, env: env, interval: baseInterval * currentRhythm, volume: 0.2, freq: freqs[i] })
 	}
 }
 
@@ -27,6 +22,7 @@ function generateInterval (opts) {
 
   var inter = T('interval', {interval: opts.interval}, function () {
     sin.noteOnWithFreq(opts.freq, 80)
+    // console.log(opts.id)
   }).set({buddies: sin})
 
   inter.start()

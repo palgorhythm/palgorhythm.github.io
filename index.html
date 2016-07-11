@@ -3,39 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>Fractal Polyrhythms!</title>
+    <link rel="stylesheet" href="index.css">
   </head>
 
   <body>
-    <form id="form">
-      <fieldset>
-        <input type="number" value="4" name="A" id="A" />
-        <label for="A">A</label>
-      </fieldset>
+    <form id="form" class="vertalign">
+      <div class="vertalign" id="form-fields-container">
+        <input type="number" value="7" name="levels" id="levels" class="form-field"/>
+        levels of
+        <input type="number" value="3" name="A" id="A" class="form-field"/>
+        :
+        <input type="number" value="4" name="B" id="B" class="form-field"/>
+        polyrhythm at
+        <input type="number" value="100" name="bpm" id="bpm" class="form-field"/>
+        BPM
+        <br><br>
 
-      <fieldset>
-        <input type="number" value="7" name="B" id="B" />
-        <label for="B">B</label>
-      </fieldset>
-
-      <fieldset>
-        <input type="number" value="7" name="levels" id="levels" />
-        <label for="levels"># of levels</label>
-      </fieldset>
-
-      <fieldset>
-        <input type="number" value="100" name="bpm" id="bpm" />
-        <label for="bpm">BPM</label>
-      </fieldset>
-
-      <button id="start" type="submit">go</button>
-      <button id="stop" type="button">stop</button>
+        <button id="start" type="submit">go</button>
+        <button id="stop" type="button">stop</button>
+      </div>
     </form>
 
-    <p>This page implements up to 7 layers of any fractal polyrhythm you like! The generating polyrhythm is A:B. It sounds nicer when A is less than B.</p>
-    </br>
-    </br>
+    <div id="description">This page implements up to 7 layers of any fractal polyrhythm you like! The generating polyrhythm is A:B. It sounds nicer when A is less than B.</div>
 
-    <div id="description"></div>
+    <div id="overlay"></div>
 
     <script src="./bundle.js"></script>
   </body>
