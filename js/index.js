@@ -3,7 +3,9 @@ var formToObject = require('form-to-object')
 var timbrePoly = require('./timbre-poly.js')
 
 $('#start').click(timbrePoly)
-$('#stop').click(location.reload)
+$('#stop').click(function () {
+  location.reload()
+})
 
 $('#form').submit(function (e) {
   e.preventDefault()
