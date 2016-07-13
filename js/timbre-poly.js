@@ -1,5 +1,5 @@
-var T = require('timbre')
-var $ = require('jquery')
+import T from 'timbre'
+import $ from 'jquery'
 
 function timbrePoly (opts) {
 	var ratio = [+opts.A, +opts.B]
@@ -44,4 +44,4 @@ function generateInterval (opts) {
   inter.start()
 }
 
-module.exports = timbrePoly
+export default timbrePoly
