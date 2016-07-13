@@ -38,7 +38,7 @@ function generateInterval (opts) {
   var inter = T('interval', {interval: opts.interval}, function () {
     sin.noteOnWithFreq(opts.freq, 80)
     $dot.show()
-    $dot.fadeOut(300)
+    $dot.hide()
   }).set({buddies: sin})
 
   inter.start()
