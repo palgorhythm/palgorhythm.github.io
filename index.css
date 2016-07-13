@@ -76,6 +76,7 @@ body {
 
 .dot {
   position: absolute;
+  display: none;
   border-radius: 50%;
 }
 
