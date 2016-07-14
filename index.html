@@ -2,14 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>whrthsdwlknds</title>
-    <script language= javascript>
-    function redirect(){
-    window.location = "https://whrthsdwlknds.github.io/fractalPolyrhythms.html";
-    }
-    </script>
+    <title>Fractal Polyrhythms!</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
   </head>
-  <body onload="redirect()">
-    <p>hellow</p>
+
+  <body>
+    <form id="form" class="vertalign">
+      <div class="vertalign" id="form-fields-container">
+        <input type="number" value="7" name="levels" id="levels" class="form-field"/>
+        levels of
+        <input type="number" value="3" name="A" id="A" class="form-field"/>
+        :
+        <input type="number" value="4" name="B" id="B" class="form-field"/>
+        polyrhythm at
+        <input type="number" value="100" name="bpm" id="bpm" class="form-field"/>
+        BPM
+
+        <button class="btn" id="start" type="submit">go</button>
+        <button class="btn" id="stop" type="button">stop</button>
+      </div>
+    </form>
+
+    <div id="description">This page implements up to 7 layers of any fractal polyrhythm you like! The generating polyrhythm is A:B. It sounds nicer when A is less than B.</div>
+
+    <canvas id="overlay"></canvas>
+
+    <script src="./bundle.js"></script>
   </body>
 </html>
