@@ -1,9 +1,5 @@
 # fractal-polyrhythms
 
-fractal-polyrhythms
-
-node/browserify-ified fork of @whrthsdwlknds code
-
 ## install
 
 ```
@@ -23,5 +19,6 @@ browse to <http://localhost:9966/>.
 ## deploy
 
 ```
-npm run deploy
+npm run dist
+git push origin master
 ```
