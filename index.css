@@ -85,3 +85,19 @@ body {
 #overlay {
   position: fixed;
 }
+
+/* media */
+
+@media (max-width: 700px) {
+  #description {
+    left: 90px;
+    right: 90px;
+  }
+}
+
+@media (max-width: 450px) {
+  #description {
+    left: 50px;
+    right: 50px;
+  }
+}
