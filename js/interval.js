@@ -18,8 +18,8 @@ class Interval {
 
     var inter = T('interval', {interval: this.opts.interval}, () => {
       sin.noteOnWithFreq(this.opts.freq, 80)
-      var dataIndex = this.counter % this.$dots.length
-      this._showDot(dataIndex)
+      var currentIndex = this.counter % this.$dots.length
+      this._showDot(currentIndex)
       this.counter++
     }).set({buddies: sin})
 
@@ -29,7 +29,7 @@ class Interval {
   // 'private'
 
   _generateDots () {
-    var size = 10, startRadius = 140, radiusInterval = 20, numOfDotsPerFreq = 8
+    var size = 5, startRadius = 120, radiusInterval = size * 2, numOfDotsPerFreq = 20
     var numOfFreqs = this.opts.levels + 1, degreeInterval = 2 * Math.PI / numOfFreqs
     var centerCoords = { x: $body.width() / 2, y: $body.height() / 2 }
 
@@ -44,15 +44,16 @@ class Interval {
         right: coords.x,
         width: size,
         height: size
-      }).attr('data-index', i)
+      })
       $('body').append($dot)
       return $dot.css({ backgroundColor: colors[this.opts.id] })
     })
   }
 
-  _showDot (i) {
-    this.$dots.forEach(($dot) => ($dot.hide()))
-    this.$dots[i].show()
+  _showDot (currentIndex) {
+    this.$dots.forEach(($dot, i, arr) => {
+      i <= currentIndex ? $dot.show() : $dot.hide()
+    })
   }
 }
 
