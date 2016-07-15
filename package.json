@@ -36,6 +36,7 @@
   "dependencies": {
     "form-to-object": "^5.0.0",
     "is-empty": "^1.0.0",
+    "ismobilejs": "^0.4.0",
     "iterate-function": "^1.1.1",
     "jquery": "^3.1.0",
     "lodash.range": "^3.1.5",

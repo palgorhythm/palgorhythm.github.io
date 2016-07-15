@@ -34,11 +34,7 @@ class Interval {
     var numOfFreqs = this.opts.levels + 1, degreeInterval = 2 * Math.PI / numOfFreqs
     var centerCoords = { x: $body.width() / 2, y: $body.height() / 2 }
 
-    var numOfDotsPerFreq
-    var windowWidth = $(window).width()
-    if      (windowWidth < 450) { numOfDotsPerFreq = 5  }
-    else if (windowWidth < 700) { numOfDotsPerFreq = 10 }
-    else                        { numOfDotsPerFreq = 20 }
+    var numOfDotsPerFreq = 20
 
     return range(numOfDotsPerFreq).map((i) => {
       var coords = {

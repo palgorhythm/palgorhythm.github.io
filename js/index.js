@@ -3,6 +3,9 @@ import formToObject from 'form-to-object'
 import timbrePoly from './timbre-poly.js'
 import queryString from 'query-string'
 import empty from 'is-empty'
+import isMobile from 'ismobilejs'
+
+if (isMobile.any) { $('#mobile-device-warning').show() }
 
 var params = queryString.parse(location.search)
 if (!empty(params)) {
