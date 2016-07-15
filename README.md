@@ -3,8 +3,8 @@
 ## install
 
 ```
-git clone https://github.com/whrthsdwlknds/fractal-polyrhythms
-cd
+git clone https://github.com/whrthsdwlknds/whrthsdwlknds.github.io
+cd whrthsdwlknds.github.io
 npm install
 ```
 
