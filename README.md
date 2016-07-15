@@ -19,6 +19,6 @@ browse to <http://localhost:9966/>.
 ## deploy
 
 ```
-npm run dist
+npm run build
 git push origin master
 ```
