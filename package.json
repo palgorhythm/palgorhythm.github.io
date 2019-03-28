@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/whrthsdwlknds/fractal-polyrhythms"
+    "url": "https://github.com/richardsjacob/fractal-polyrhythms"
   },
-  "author": "whrthsdwlknds",
+  "author": "richardsjacob",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/whrthsdwlknds/fractal-polyrhythms/issues"
+    "url": "https://github.com/richardsjacob/fractal-polyrhythms/issues"
   },
-  "homepage": "https://github.com/whrthsdwlknds/fractal-polyrhythms",
+  "homepage": "https://github.com/richardsjacob/fractal-polyrhythms",
   "dependencies": {
     "form-to-object": "^5.0.0",
     "is-empty": "^1.0.0",

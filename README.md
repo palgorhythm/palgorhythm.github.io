@@ -3,8 +3,8 @@
 ## install
 
 ```
-git clone https://github.com/whrthsdwlknds/whrthsdwlknds.github.io
-cd whrthsdwlknds.github.io
+git clone https://github.com/richardsjacob/richardsjacob.github.io
+cd richardsjacob.github.io
 npm install
 ```
 
