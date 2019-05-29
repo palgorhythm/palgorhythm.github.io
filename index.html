@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
     <title>Fractal Polyrhythms!</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
   </head>
 
   <body>
     <form id="form" class="vertalign">
       <div class="vertalign" id="form-fields-container">
-        <input type="number" value="7" name="levels" id="levels" class="form-field"/>
-        levels of
-        <input type="number" value="3" name="A" id="A" class="form-field"/>
+        <input
+          type="number"
+          value="1"
+          name="levels"
+          id="levels"
+          class="form-field"
+        />
+        level(s) of
+        <input type="number" value="2" name="A" id="A" class="form-field" />
         :
-        <input type="number" value="4" name="B" id="B" class="form-field"/>
-        polyrhythm at
-        <input type="number" value="100" name="bpm" id="bpm" class="form-field"/>
+        <input type="number" value="3" name="B" id="B" class="form-field" />
+        <br /><br />polyrhythm at
+        <input
+          type="number"
+          value="100"
+          name="bpm"
+          id="bpm"
+          class="form-field"
+        />
         BPM
 
         <button class="btn" id="start" type="submit">go</button>
@@ -24,7 +40,16 @@
       </div>
     </form>
 
-    <div id="description">This page implements up to 7 layers of any fractal polyrhythm you like! The generating polyrhythm is A:B. It sounds nicer when A is less than B.</div>
+    <div id="description">
+      <strong>Fractal Polyrhythm:</strong> a composite polyrhythm in which the
+      ratio between every two subsequent voices is the same. <br />You can
+      calculate the ratio between any two voices in a FP by taking the numbers
+      in the generating ratio to the power of the distance in levels between the
+      two voices. For example, in a 3-level 2:3 polyrhythm, we have four voices,
+      and suppose their names are A, B, C, and D. The ratio between A and B, B
+      and C, and C and D are all 2:3, which makes the ratio between A and C 4:9,
+      and B and D 4:9. The ratio between A and D is now 8:27.
+    </div>
 
     <div id="overlay"></div>
 

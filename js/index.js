@@ -1,33 +1,48 @@
-import $ from 'jquery'
-import formToObject from 'form-to-object'
-import timbrePoly from './timbre-poly.js'
-import queryString from 'query-string'
-import empty from 'is-empty'
-import isMobile from 'ismobilejs'
+import $ from "jquery";
+import formToObject from "form-to-object";
+import timbrePoly from "./timbre-poly.js";
+import queryString from "query-string";
+import empty from "is-empty";
+import isMobile from "ismobilejs";
 
-if (isMobile.any) { $('#mobile-device-warning').show() }
-
-var params = queryString.parse(location.search)
-if (!empty(params)) {
-  $('#levels').val(params.levels)
-  $('#A').val(params.A)
-  $('#B').val(params.B)
-  $('#bpm').val(params.bpm)
+let intervals;
+if (isMobile.any) {
+  $("#mobile-device-warning").show();
 }
 
-$('body').fadeIn({ duration: 3000, easing: 'swing' })
+var params = document.querySelectorAll(".form-field");
+console.log(params);
+console.log(params[0].value);
+if (!empty(params)) {
+  $("#levels").val(params[0].value);
+  $("#A").val(params[1].value);
+  $("#B").val(params[2].value);
+  $("#bpm").val(params[3].value);
+}
 
-$('#form').submit(function (e) {
-  e.preventDefault()
-  $('#start').hide()
-  $('#stop').show()
-  var opts = formToObject(this)
-  timbrePoly(opts)
-})
+$("body").fadeIn({ duration: 3000, easing: "swing" });
 
-$('#stop').click(() => {
-  var form = $('#form')[0]
-  var opts = formToObject(form)
-  var searchParams = queryString.stringify(opts)
-  location.search = searchParams
-})
+$("#form").submit(function(e) {
+  e.preventDefault();
+  $("#start").hide();
+  $("#stop").show();
+  var opts = formToObject(this);
+  intervals = timbrePoly(opts);
+  console.log(intervals);
+});
+
+$("#stop").click(e => {
+  e.preventDefault();
+  e.stopPropagation();
+  $("div.dot").remove();
+  intervals.forEach(el => {
+    el.inter.stop();
+  });
+  $("#start").show();
+  $("#stop").hide();
+  // OLD STUFF THAT REFRESHES PAGE
+  // var form = $("#form")[0];
+  // var opts = formToObject(form);
+  // var searchParams = queryString.stringify(opts);
+  // location.search = searchParams;
+});
