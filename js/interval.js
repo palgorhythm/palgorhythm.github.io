@@ -1,6 +1,12 @@
-import T from "timbre";
 import $ from "jquery";
 import range from "lodash.range";
+import timbreFunc from "./timbreMod.js";
+
+let T;
+document.body.addEventListener('click',() => {
+  timbreFunc();
+  T = timbre;
+});
 
 var colors = [
   "#F5BF16",
@@ -13,7 +19,6 @@ var colors = [
   "#3F5765"
 ];
 var $body = $("body");
-var env = T("perc", { a: 50, r: 2500 });
 
 class Interval {
   constructor(opts) {
@@ -21,10 +26,11 @@ class Interval {
     this.$dots = this._generateDots();
     this.counter = 0;
     this.inter = 0;
+    this.env = T("perc", { a: 50, r: 2500 });
   }
 
   start() {
-    var sin = T("PluckGen", { env: env, mul: this.opts.volume });
+    var sin = T("PluckGen", { env: this.env, mul: this.opts.volume });
 
     this.inter = T("interval", { interval: this.opts.interval }, () => {
       sin.noteOnWithFreq(this.opts.freq, 80);
