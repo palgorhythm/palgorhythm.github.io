@@ -43,8 +43,7 @@
     "lodash": "^4.17.11",
     "lodash.range": "^3.2.0",
     "query-string": "^4.3.4",
-    "startaudiocontext": "^1.2.1",
-    "timbre": "git://github.com/data-doge/timbre.js.git"
+    "startaudiocontext": "^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",

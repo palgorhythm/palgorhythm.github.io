@@ -7,12 +7,11 @@ import isMobile from "ismobilejs";
 
 let intervals;
 if (isMobile.any) {
-  $("#mobile-device-warning").show();
+  // $("#mobile-device-warning").show();
+  $("#description").hide();
 }
 
 var params = document.querySelectorAll(".form-field");
-console.log(params);
-console.log(params[0].value);
 if (!empty(params)) {
   $("#levels").val(params[0].value);
   $("#A").val(params[1].value);
@@ -21,14 +20,13 @@ if (!empty(params)) {
 }
 
 $("body").fadeIn({ duration: 3000, easing: "swing" });
-
 $("#form").submit(function(e) {
   e.preventDefault();
+  e.stopPropagation();
   $("#start").hide();
   $("#stop").show();
   var opts = formToObject(this);
   intervals = timbrePoly(opts);
-  console.log(intervals);
 });
 
 $("#stop").click(e => {

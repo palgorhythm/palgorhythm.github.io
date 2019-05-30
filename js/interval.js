@@ -1,30 +1,36 @@
-import T from "timbre";
 import $ from "jquery";
 import range from "lodash.range";
+import timbreFunc from "./timbreMod.js";
 
-var colors = [
+let T;
+document.body.addEventListener("click", () => {
+  timbreFunc();
+  T = timbre;
+});
+
+const colors = [
   "#F5BF16",
   "#5CBAEB",
   "#FF385C",
-  "#323B4A",
+  "#A1EF8B",
   "#59EAE6",
   "#BDD4DE",
   "#FF530D",
-  "#3F5765"
+  "#06D6A0"
 ];
-var $body = $("body");
-var env = T("perc", { a: 50, r: 2500 });
 
 class Interval {
   constructor(opts) {
+    this.container = $("form");
     this.opts = opts;
     this.$dots = this._generateDots();
     this.counter = 0;
     this.inter = 0;
+    this.env = T("perc", { a: 50, r: 2500 });
   }
 
   start() {
-    var sin = T("PluckGen", { env: env, mul: this.opts.volume });
+    var sin = T("PluckGen", { env: this.env, mul: this.opts.volume });
 
     this.inter = T("interval", { interval: this.opts.interval }, () => {
       sin.noteOnWithFreq(this.opts.freq, 80);
@@ -43,18 +49,32 @@ class Interval {
   // 'private'
 
   _generateDots() {
-    var size = 5,
-      startRadius = 120,
-      radiusInterval = size * 2;
+    let size;
+    let startRadius;
+    if (this.container.width() > 50) {
+      startRadius = this.container.width() / 1.7;
+      size = 100 / this.opts.numDotsForThisFreq;
+      size < 1 ? (size = 1) : null;
+    } else {
+      size = 100 / this.opts.numDotsForThisFreq;
+      startRadius = this.container.width() / 1.3 + size;
+      size < 1 ? (size = 1) : null;
+    }
+    console.log(size);
 
-    var numOfFreqs = this.opts.levels + 1,
+    const radiusInterval = size * 2;
+
+    const numOfFreqs = this.opts.levels + 1,
       degreeInterval = (2 * Math.PI) / numOfFreqs;
-    var centerCoords = { x: $body.width() / 2, y: $body.height() / 2 };
-
-    var numOfDotsPerFreq = 20;
+    const centerCoords = {
+      x: this.container.width() / 2,
+      y: this.container.height() / 2
+    };
+    let numOfDotsPerFreq = this.opts.numDotsForThisFreq;
+    numOfDotsPerFreq > 100 ? (numOfDotsPerFreq = 100) : null;
 
     return range(numOfDotsPerFreq).map(i => {
-      var coords = {
+      const coords = {
         x:
           (startRadius + i * radiusInterval) *
             Math.cos(degreeInterval * this.opts.id) +
@@ -67,13 +87,13 @@ class Interval {
           size / 2
       };
 
-      var $dot = $('<div class="dot"></div>').css({
+      const $dot = $('<div class="dot"></div>').css({
         top: coords.y,
         right: coords.x,
         width: size,
         height: size
       });
-      $("body").append($dot);
+      this.container.append($dot);
       return $dot.css({ backgroundColor: colors[this.opts.id] });
     });
   }
