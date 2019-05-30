@@ -52,13 +52,13 @@ class Interval {
     let size;
     let startRadius;
     if (this.container.width() > 50) {
-      startRadius = this.container.width() / 1.7;
+      startRadius = this.container.width() / 1.6;
       size = 100 / this.opts.numDotsForThisFreq;
-      size < 1 ? (size = 1) : null;
+      size < 2 ? (size = 2) : null;
     } else {
       size = 100 / this.opts.numDotsForThisFreq;
       startRadius = this.container.width() / 1.3 + size;
-      size < 1 ? (size = 1) : null;
+      size < 2 ? (size = 2) : null;
     }
     console.log(size);
 

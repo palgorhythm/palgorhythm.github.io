@@ -21,7 +21,7 @@ function timbrePoly(opts) {
   let interval;
   let numDotsForThisFreq;
   for (var i = 0; i <= levels; i += 1) {
-    numDotsForThisFreq = opts.B ** Bpow * opts.A ** Apow;
+    numDotsForThisFreq = Math.pow(opts.B, Bpow) * Math.pow(opts.A, Apow);
     Bpow--;
     Apow++;
     currentRhythm = Math.pow(ratio[0], levels - i) * Math.pow(ratio[1], i);
@@ -32,7 +32,7 @@ function timbrePoly(opts) {
       volume: 0.2,
       freq: freqs[i],
       numDotsForThisFreq: numDotsForThisFreq,
-      maxNumDots: Math.max(opts.A, opts.B) ** levels
+      maxNumDots: Math.pow(Math.max(opts.A, opts.B), levels)
     });
     interval.start();
     intervals.push(interval);
