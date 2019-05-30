@@ -7,7 +7,8 @@ import isMobile from "ismobilejs";
 
 let intervals;
 if (isMobile.any) {
-  $("#mobile-device-warning").show();
+  // $("#mobile-device-warning").show();
+  $("#description").hide();
 }
 
 var params = document.querySelectorAll(".form-field");
@@ -19,10 +20,6 @@ if (!empty(params)) {
 }
 
 $("body").fadeIn({ duration: 3000, easing: "swing" });
-$("body").click(e =>{
-  console.log('clicked somewhere!',e);
-  
-})
 $("#form").submit(function(e) {
   e.preventDefault();
   e.stopPropagation();

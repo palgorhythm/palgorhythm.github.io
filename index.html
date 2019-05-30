@@ -12,59 +12,52 @@
   </head>
 
   <body>
-    <script>
-      // var evt = new MouseEvent("click", {
-      //   view: window,
-      //   bubbles: true,
-      //   cancelable: true,
-      //   clientX: 20
-      //   /* whatever properties you want to give it */
-      // });
-      // async function f() {
-      //   document.body.addEventListener("click", e => {
-      //     var context = new AudioContext();
-      //     console.log(context);
-      //   });
-      // }
-      // f();
-    </script>
+    <h1>fractal polyrhythms</h1>
     <form id="form" class="vertalign">
       <div class="vertalign" id="form-fields-container">
-        <input
-          type="number"
-          value="1"
-          name="levels"
-          id="levels"
-          class="form-field"
-        />
-        level(s) of
-        <input type="number" value="2" name="A" id="A" class="form-field" />
-        :
-        <input type="number" value="3" name="B" id="B" class="form-field" />
-        <br /><br />polyrhythm at
-        <input
-          type="number"
-          value="100"
-          name="bpm"
-          id="bpm"
-          class="form-field"
-        />
-        BPM
-
+        <div class="options">
+          <input
+            type="number"
+            value="1"
+            name="levels"
+            id="levels"
+            class="form-field"
+          />
+          level(s) of
+          <input type="number" value="2" name="A" id="A" class="form-field" />
+          :
+          <input type="number" value="3" name="B" id="B" class="form-field" />
+          <br /><br />polyrhythm at
+          <input
+            type="number"
+            value="100"
+            name="bpm"
+            id="bpm"
+            class="form-field"
+          />
+          bpm
+        </div>
         <button class="btn" id="start" type="submit">go</button>
         <button class="btn" id="stop" type="button">stop</button>
       </div>
     </form>
 
     <div id="description">
-      <strong>Fractal Polyrhythm:</strong> a composite polyrhythm in which the
-      ratio between every two subsequent voices is the same. <br />You can
-      calculate the ratio between any two voices in a FP by taking the numbers
-      in the generating ratio to the power of the distance in levels between the
-      two voices. For example, in a 3-level 2:3 polyrhythm, we have four voices,
-      and suppose their names are A, B, C, and D. The ratio between A and B, B
-      and C, and C and D are all 2:3, which makes the ratio between A and C 4:9,
-      and B and D 4:9. The ratio between A and D is now 8:27.
+      <strong>Fractal Polyrhythm:</strong>
+      <span style="color: #F5BF16;"
+        >multiple voices sound at regular intervals, where the rhythmic ratio
+        between adjacent voices is equal.</span
+      >
+      <br /><span style="color: #5CBAEB"
+        >Taking this ratio to the power of the distance in levels between to
+        nonadjacent voices gives a composite polyrhythm.</span
+      ><br />
+      <span style="color: #FF385C"
+        >For example, in a 3-level 2:3 polyrhythm, we have four voices, and
+        suppose their names are A, B, C, and D.</span
+      >
+      <br /><span style="color: #A1EF8B"
+      >Some ratios in this setup are B-C: 2:3, A-C: 4:9, and A-D: 8:27.<br />
     </div>
 
     <div id="overlay"></div>
