@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/richardsjacob/fractal-polyrhythms"
+    "url": "https://github.com/palgorhythm/fractal-polyrhythms"
   },
-  "author": "richardsjacob",
+  "author": "palgorhythm",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/richardsjacob/fractal-polyrhythms/issues"
+    "url": "https://github.com/palgorhythm/fractal-polyrhythms/issues"
   },
-  "homepage": "https://github.com/richardsjacob/fractal-polyrhythms",
+  "homepage": "https://github.com/palgorhythm/fractal-polyrhythms",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "form-to-object": "^5.1.0",

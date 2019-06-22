@@ -3,8 +3,8 @@
 ## install
 
 ```
-git clone https://github.com/richardsjacob/richardsjacob.github.io
-cd richardsjacob.github.io
+git clone https://github.com/palgorhythm/palgorhythm.github.io
+cd palgorhythm.github.io
 npm install
 ```
 
