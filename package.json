@@ -40,7 +40,7 @@
     "ismobilejs": "^0.4.1",
     "iterate-function": "^1.1.1",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "lodash.range": "^3.2.0",
     "query-string": "^4.3.4",
     "startaudiocontext": "^1.2.1",
